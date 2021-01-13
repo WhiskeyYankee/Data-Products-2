@@ -1,0 +1,23 @@
+---
+title: "Project 2"
+author: "Whiskey Yankee"
+date: "1/13/2021"
+output: ioslides_presentation
+---
+
+```{r echo=FALSE}
+library(tidyverse)
+library(plotly)
+```
+
+
+## MPG vs Weight
+
+```{r mtcars,echo=FALSE}
+p <- ggplot(data = mtcars, mapping = aes(x = wt, y = mpg, group = cyl,color = cyl)) +
+  geom_point() +
+  geom_smooth(formula = y~x,method = "lm",se = FALSE)
+gg <- ggplotly(p)
+gg
+```
+
